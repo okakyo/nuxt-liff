@@ -1,40 +1,18 @@
 <template>
-  <div class="container has-text-centered">
-    <div>
-      <p class="subtitle has-text-grey">
-        LINEプロフィールAPI
-      </p>
-    </div>
-    <div class="card">
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img :src="pictureUrl" />
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4">{{ displayName }}</p>
-            <p class="subtitle is-6">@{{ userId }}</p>
-          </div>
-        </div>
-
-        <div class="content">
-          {{ statusMessage }}
-        </div>
-      </div>
-    </div>
-
-    <div class="column is-4 is-offset-4">
-      <div>
-        <button
-          class="button is-info is-block is-large is-fullwidth"
-          @click="getProfile()"
-        >
-          取得
-        </button>
-      </div>
-    </div>
+  <div>
+    <v-row justify="center">
+      <v-col cols="8" md="6" lg="4">
+        <v-img :src="pictureUrl" />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-list>
+        <v-list-item>
+          <v-list-item-title>{{ displayName }}</v-list-item-title>
+          <v-list-item-subtitle>{{ userId }}</v-list-item-subtitle>
+        </v-list-item>
+      </v-list>
+    </v-row>
   </div>
 </template>
 <script>
