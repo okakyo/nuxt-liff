@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <v-card>
     <v-row justify="center">
-      <v-col cols="8" md="6" lg="4">
+      <v-col cols="8">
         <v-img :src="pictureUrl" />
       </v-col>
+      <v-col cols="8">
+        <v-list>
+          <v-list-item>
+            <v-list-item-title>{{ displayName }}</v-list-item-title>
+            <v-list-item-subtitle>{{ userId }}</v-list-item-subtitle>
+          </v-list-item>
+        </v-list>
+      </v-col>
     </v-row>
-    <v-row>
-      <v-list>
-        <v-list-item>
-          <v-list-item-title>{{ displayName }}</v-list-item-title>
-          <v-list-item-subtitle>{{ userId }}</v-list-item-subtitle>
-        </v-list-item>
-      </v-list>
-    </v-row>
-  </div>
+  </v-card>
 </template>
 <script>
 import liff from '@line/liff'
