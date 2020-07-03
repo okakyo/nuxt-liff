@@ -5,12 +5,8 @@
         <v-img :src="pictureUrl" />
       </v-col>
       <v-col cols="8">
-        <v-list>
-          <v-list-item>
-            <v-list-item-title>{{ displayName }}</v-list-item-title>
-            <v-list-item-subtitle>{{ userId }}</v-list-item-subtitle>
-          </v-list-item>
-        </v-list>
+        <v-card-title>{{ displayName }}</v-card-title>
+        <v-card-subtitle>{{ userId }}</v-card-subtitle>
       </v-col>
     </v-row>
   </v-card>
@@ -32,18 +28,14 @@ export default {
         liffId: '1640064557-P25n2Nd9',
       })
       .then(() => {
-        console.log('Liff is Ready!')
-        liff
-          .getProfile()
-          .then((profile) => {
-            this.userId = profile.userId
-            this.displayName = profile.displayName
-            this.pictureUrl = profile.pictureUrl
-            this.statusMessage = profile.statusMessage
-          })
-          .catch(function (error) {
-            alert('Error getting profile: ' + error)
-          })
+        // ここで認証機能を実装したい
+        console.log('LIFF is Ready!')
+        liff.getProfile().then((profile) => {
+          this.userId = profile.userId
+          this.displayName = profile.displayName
+          this.pictureUrl = profile.pictureUrl
+          this.statusMessage = profile.statusMessage
+        })
       })
       .catch((e) => {
         console.error(e)
