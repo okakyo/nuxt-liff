@@ -49,10 +49,6 @@ export default {
     }
   },
   created() {
-    if (!this.canUseLIFF()) {
-      return
-    }
-
     liff
       .init({
         liffId: '1640064557-P25n2Nd9',
