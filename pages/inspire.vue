@@ -55,20 +55,20 @@ export default {
       })
       .then(() => {
         console.log('Liff is Ready!')
+        liff
+          .getProfile()
+          .then((profile) => {
+            this.userId = profile.userId
+            this.displayName = profile.displayName
+            this.pictureUrl = profile.pictureUrl
+            this.statusMessage = profile.statusMessage
+          })
+          .catch(function (error) {
+            alert('Error getting profile: ' + error)
+          })
       })
       .catch((e) => {
         console.error(e)
-      })
-    liff
-      .getProfile()
-      .then((profile) => {
-        this.userId = profile.userId
-        this.displayName = profile.displayName
-        this.pictureUrl = profile.pictureUrl
-        this.statusMessage = profile.statusMessage
-      })
-      .catch(function (error) {
-        alert('Error getting profile: ' + error)
       })
   },
 }
