@@ -1,34 +1,51 @@
 <template>
-  <section class="container">
-    <p class="line-id">LINE ID：{{ lineId }}</p>
-    <div class="form">
-      <div class="control">
-        <input
-          v-model="formData.name"
-          class="input"
-          type="text"
-          placeholder="お名前"
-        />
-      </div>
-      <button class="button is-info is-fullwidth" @click="onSubmit()">
-        送信する
-      </button>
-      <button class="button is-light is-fullwidth" @click="handleCancel()">
-        キャンセル
-      </button>
+  <div class="container has-text-centered">
+    <div>
+      <p class="subtitle has-text-grey">
+        LINEプロフィールAPI
+      </p>
     </div>
-  </section>
-</template>
+    <div class="card">
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img :src="pictureUrl" />
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">{{ displayName }}</p>
+            <p class="subtitle is-6">@{{ userId }}</p>
+          </div>
+        </div>
 
+        <div class="content">
+          {{ statusMessage }}
+        </div>
+      </div>
+    </div>
+
+    <div class="column is-4 is-offset-4">
+      <div>
+        <button
+          class="button is-info is-block is-large is-fullwidth"
+          @click="getProfile()"
+        >
+          取得
+        </button>
+      </div>
+    </div>
+  </div>
+</template>
 <script>
 import liff from '@line/liff'
 export default {
   data() {
     return {
-      formData: {
-        name: '',
-      },
-      lineId: null,
+      userId: '',
+      displayName: '',
+      pictureUrl: 'https://bulma.io/images/placeholders/128x128.png',
+      statusMessage: '',
     }
   },
   created() {
@@ -36,42 +53,31 @@ export default {
       return
     }
 
-    liff.init((data) => {
-      this.lineId = data.context.userId || null
-    })
+    liff
+      .init({
+        liffId: '1640064557-P25n2Nd9',
+      })
+      .then(() => {
+        console.log('Liff is Ready!')
+      })
+      .catch((e) => {
+        console.error(e)
+      })
   },
-  methods: {
-    onSubmit() {
-      if (!this.canUseLIFF()) {
-        return
-      }
 
+  methods: {
+    getProfile() {
       liff
-        .sendMessages([
-          {
-            type: 'text',
-            text: `お名前：\n${this.formData.name}`,
-          },
-          {
-            type: 'text',
-            text: '送信が完了しました',
-          },
-        ])
-        .then(() => {
-          liff.closeWindow()
+        .getProfile()
+        .then((profile) => {
+          this.userId = profile.userId
+          this.displayName = profile.displayName
+          this.pictureUrl = profile.pictureUrl
+          this.statusMessage = profile.statusMessage
         })
-        .catch((e) => {
-          window.alert('Error sending message: ' + e)
+        .catch(function (error) {
+          alert('Error getting profile: ' + error)
         })
-    },
-    handleCancel() {
-      if (!this.canUseLIFF()) {
-        return
-      }
-      liff.closeWindow()
-    },
-    canUseLIFF() {
-      return navigator.userAgent.includes('Line') && liff
     },
   },
 }
