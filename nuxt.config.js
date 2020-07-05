@@ -105,7 +105,7 @@ export default {
         config.externals = {
           '@firebase/app': 'commonjs @firebase/app',
           '@firebase/firestore': 'commonjs @firebase/firestore',
-          '@line/liff': 'commonjs @line/liff',
+          '@line/liff': 'commonjs @line/liff/dist/lib',
           // etc...
         }
       }
