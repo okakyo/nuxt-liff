@@ -101,7 +101,7 @@ export default {
     extend(config, { isServer }) {
       if (isServer) {
         config.externals = {
-          '@"@line/liff': 'commonjs @line/liff',
+          '@line/liff': 'commonjs @line/liff',
 
           // etc...
         }
