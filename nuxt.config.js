@@ -5,7 +5,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -105,7 +105,6 @@ export default {
         config.externals = {
           '@firebase/app': 'commonjs @firebase/app',
           '@firebase/firestore': 'commonjs @firebase/firestore',
-          '@line/liff': 'commonjs @line/liff',
           // etc...
         }
       }
