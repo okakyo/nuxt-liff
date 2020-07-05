@@ -97,5 +97,15 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    extend(config, { isServer }) {
+      if (isServer) {
+        config.externals = {
+          '@"@line/liff': 'commonjs @line/liff',
+
+          // etc...
+        }
+      }
+    },
+  },
 }
