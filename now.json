@@ -4,11 +4,7 @@
       {
         "src": "nuxt.config.js",
         "use": "@nuxtjs/now-builder",
-        "config": {
-            "tscOptions": {
-                "sourceMap": false
-            }
-        }
+        "config": {}
       }
     ],
     "routes": [
