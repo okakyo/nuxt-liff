@@ -27,6 +27,9 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
+    head: {
+      script: [{ src: 'https://static.line-scdn.net/liff/edge/2/sdk.js' }],
+    },
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
@@ -97,15 +100,5 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {
-    extend(config, { isServer }) {
-      if (isServer) {
-        config.externals = {
-          '@line/liff': 'commonjs @line/liff',
-
-          // etc...
-        }
-      }
-    },
-  },
+  build: {},
 }

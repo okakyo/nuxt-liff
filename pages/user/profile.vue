@@ -12,8 +12,7 @@
   </v-card>
 </template>
 <script>
-import liff from '@line/liff'
-
+import liff from 'liff-type'
 export default {
   data() {
     return {
