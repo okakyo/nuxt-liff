@@ -27,9 +27,8 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    head: {
-      script: [{ src: 'https://static.line-scdn.net/liff/edge/2/sdk.js' }],
-    },
+
+    script: [{ src: 'https://static.line-scdn.net/liff/edge/2/sdk.js' }],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
