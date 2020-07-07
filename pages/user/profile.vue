@@ -13,32 +13,28 @@
 </template>
 <script>
 import liff from '@line/liff'
-export default {
-  data() {
-    return {
-      userId: '',
-      displayName: '',
-      pictureUrl: 'https://bulma.io/images/placeholders/128x128.png',
-      statusMessage: '',
-    }
-  },
-  created() {
-    liff.ready
+import { defineComponent, ref } from '@vue/composition-api'
+export default defineComponent({
+  setup() {
+    const userId = ref('')
+    const displayName = ref('')
+    const pictureUrl = ref('https://bulma.io/images/placeholders/128x128.png')
+    const statusMessage = ref('')
+    liff
+      .init({
+        liffId: '1640064557-P25n2Nd9',
+      })
       .then(() => {
-        // ここで認証機能を実装したい
         console.log('LIFF is Ready!')
         liff.getProfile().then((profile) => {
-          this.userId = profile.userId
-          this.displayName = profile.displayName
-          this.pictureUrl = profile.pictureUrl
-          this.statusMessage = profile.statusMessage
+          userId.value = profile.userId
+          displayName.value = profile.displayName
+          pictureUrl.value = profile.pictureUrl
+          statusMessage.value = profile.statusMessage
         })
       })
-      .catch((e) => {
-        console.error(e)
-      })
   },
-}
+})
 </script>
 
 <style>
