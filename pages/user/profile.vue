@@ -20,6 +20,8 @@ export default defineComponent({
     const displayName = ref('')
     const pictureUrl = ref('https://bulma.io/images/placeholders/128x128.png')
     const statusMessage = ref('')
+
+    // MEMO: created が廃止されて setup()
     liff
       .init({
         liffId: '1640064557-P25n2Nd9',
@@ -27,6 +29,7 @@ export default defineComponent({
       .then(() => {
         console.log('LIFF is Ready!')
         liff.getProfile().then((profile) => {
+          console.log(profile)
           userId.value = profile.userId
           displayName.value = profile.displayName
           pictureUrl.value = profile.pictureUrl
