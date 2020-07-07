@@ -33,9 +33,7 @@ export default {
           liff.login()
         }
         console.log(`LIFF is Ready!:${liff.isLoggedIn()}`)
-        if (liff.isLoggedIn()) {
-          liff.login()
-        }
+
         liff.getProfile().then((profile) => {
           this.userId = profile.userId
           this.displayName = profile.displayName
