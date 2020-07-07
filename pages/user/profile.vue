@@ -1,13 +1,17 @@
 <template>
   <v-card>
     <v-row justify="center">
-      <v-col cols="6">
+      <v-col cols="6" md="4">
         <v-img :src="pictureUrl" />
       </v-col>
       <v-col cols="8">
         <v-card-title>{{ displayName }}</v-card-title>
         <v-card-subtitle>{{ userId }}</v-card-subtitle>
+        <v-card-subtitle>{{ statusMessage }}</v-card-subtitle>
       </v-col>
+      <v-btn block color="danger">
+        ログアウト
+      </v-btn>
     </v-row>
   </v-card>
 </template>
