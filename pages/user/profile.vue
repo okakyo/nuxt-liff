@@ -41,6 +41,12 @@ export default defineComponent({
             console.error(e)
           })
       })
+    return {
+      userId,
+      displayName,
+      pictureUrl,
+      statusMessage,
+    }
   },
 })
 </script>

@@ -40,6 +40,9 @@ export default defineComponent({
       .catch((e) => {
         console.error(e)
       })
+    return {
+      isLogin,
+    }
   },
 })
 </script>
