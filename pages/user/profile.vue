@@ -23,8 +23,7 @@ export default {
     }
   },
   created() {
-    liff
-      .ready()
+    liff.ready
       .then(() => {
         // ここで認証機能を実装したい
         console.log('LIFF is Ready!')
