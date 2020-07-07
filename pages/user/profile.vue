@@ -28,13 +28,18 @@ export default defineComponent({
       })
       .then(() => {
         console.log('LIFF is Ready!')
-        liff.getProfile().then((profile) => {
-          console.log(profile)
-          userId.value = profile.userId
-          displayName.value = profile.displayName
-          pictureUrl.value = profile.pictureUrl
-          statusMessage.value = profile.statusMessage
-        })
+        liff
+          .getProfile()
+          .then((profile) => {
+            console.log(profile)
+            userId.value = profile.userId
+            displayName.value = profile.displayName
+            pictureUrl.value = profile.pictureUrl
+            statusMessage.value = profile.statusMessage
+          })
+          .catch((e) => {
+            console.error(e)
+          })
       })
   },
 })
