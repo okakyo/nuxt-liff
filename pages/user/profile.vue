@@ -24,9 +24,7 @@ export default {
   },
   created() {
     liff
-      .init({
-        liffId: '1640064557-P25n2Nd9',
-      })
+      .ready()
       .then(() => {
         // ここで認証機能を実装したい
         console.log('LIFF is Ready!')
