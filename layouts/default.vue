@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import { defineComponent, ref } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import liff from '@line/liff'
 
 import Headers from '@/components/templates/header/Header.vue'
@@ -29,20 +29,15 @@ export default defineComponent({
   components: {
     Headers,
   },
-  setup() {
-    const isLogin = ref(false)
-    liff.ready
-      .then(() => {
-        // ここで認証機能を実装したい
-        console.log('LIFF is Ready!')
-        isLogin.value = liff.isLoggedIn()
-      })
-      .catch((e) => {
-        console.error(e)
-      })
+  data() {
     return {
-      isLogin,
+      isLogin: false,
     }
+  },
+  created() {
+    liff.ready.then(() => {
+      this.isLogin = liff.isLoggedIn()
+    })
   },
 })
 </script>

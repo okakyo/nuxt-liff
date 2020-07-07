@@ -47,19 +47,3 @@ export default {
   },
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  padding: 20px;
-  min-height: 100vh;
-}
-
-.line-id {
-  margin-bottom: 30px;
-}
-
-.form > * {
-  margin-bottom: 10px;
-}
-</style>
