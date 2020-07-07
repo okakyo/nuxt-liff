@@ -1,20 +1,17 @@
 # nuxt-liff
 
-## Build Setup
+## このアプリについて
+このアプリは、LIFFとNuxt.js を利用したアプリです。
+##　使用したフレームワーク
+###  Frontend 
+- Nuxt.js 
+### Authentication
+- LIFF(LINE Front-Framework)
 
-```bash
-# install dependencies
-$ npm install
+### Database 
+- Firebase 
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+### Hosting Server
+- Vercel 
 
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Lisence

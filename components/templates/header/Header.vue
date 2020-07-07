@@ -3,7 +3,7 @@
     <v-btn text to="/">Top</v-btn>
     <v-spacer />
     <v-btn v-if="!isLogin" text to="/login">ログイン</v-btn>
-    <v-btn v-else text>ログアウト</v-btn>
+    <v-btn v-else to="/user/profile">プロファイル</v-btn>
   </v-app-bar>
 </template>
 <script lang="ts">

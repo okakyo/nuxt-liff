@@ -23,17 +23,8 @@ export default {
     }
   },
   created() {
-    liff
-      .init({
-        liffId: '1640064557-P25n2Nd9',
-      })
+    liff.ready
       .then(() => {
-        // ここで認証機能を実装したい
-        if (!liff.isLoggedIn()) {
-          liff.login()
-        }
-        console.log(`LIFF is Ready!:${liff.isLoggedIn()}`)
-
         liff.getProfile().then((profile) => {
           this.userId = profile.userId
           this.displayName = profile.displayName

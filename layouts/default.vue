@@ -35,9 +35,16 @@ export default defineComponent({
     }
   },
   created() {
-    liff.ready.then(() => {
-      this.isLogin = liff.isLoggedIn()
-    })
+    liff
+      .init({
+        liffId: '1640064557-P25n2Nd9',
+      })
+      .then(() => {
+        if (!liff.isLoggedIn()) {
+          liff.login()
+        }
+        this.isLogin = liff.isLoggedIn()
+      })
   },
 })
 </script>
