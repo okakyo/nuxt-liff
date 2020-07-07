@@ -10,7 +10,7 @@
         <v-card-subtitle>{{ statusMessage }}</v-card-subtitle>
       </v-col>
       <v-col cols="10">
-        <v-btn block text color="error">
+        <v-btn block depressed color="error">
           ログアウト
         </v-btn>
       </v-col>
