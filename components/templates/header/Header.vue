@@ -2,11 +2,19 @@
   <v-app-bar app>
     <v-btn text to="/">Top</v-btn>
     <v-spacer />
-    <v-btn text to="/login">ログイン</v-btn>
+    <v-btn v-if="isLogin" text to="/login">ログイン</v-btn>
+    <v-btn v-else text>ログアウト</v-btn>
   </v-app-bar>
 </template>
 <script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({})
+import { defineComponent } from '@vue/composition-api'
+export default defineComponent({
+  name: 'Headers',
+  props: {
+    isLogin: {
+      type: Boolean,
+      required: true,
+    },
+  },
+})
 </script>
