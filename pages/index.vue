@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+// ここでGAS と連携させたい
 
 export default Vue.extend({})
 </script>
