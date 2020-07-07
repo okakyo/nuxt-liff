@@ -29,7 +29,7 @@ export default {
       })
       .then(() => {
         // ここで認証機能を実装したい
-        if (liff.isLoggedIn()) {
+        if (!liff.isLoggedIn()) {
           liff.login()
         }
         console.log(`LIFF is Ready!:${liff.isLoggedIn()}`)
