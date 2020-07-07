@@ -29,7 +29,7 @@ export default {
       })
       .then(() => {
         // ここで認証機能を実装したい
-        console.log('LIFF is Ready!')
+        console.log(`LIFF is Ready!:${liff.isLoggedIn()}`)
         liff.getProfile().then((profile) => {
           this.userId = profile.userId
           this.displayName = profile.displayName
