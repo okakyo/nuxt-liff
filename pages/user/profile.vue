@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-row justify="center">
-      <v-col cols="8">
+      <v-col cols="6">
         <v-img :src="pictureUrl" />
       </v-col>
       <v-col cols="8">

@@ -3,11 +3,12 @@
     <v-btn text to="/">Top</v-btn>
     <v-spacer />
     <v-btn v-if="!isLogin" text to="/login">ログイン</v-btn>
-    <v-btn v-else to="/user/profile">プロファイル</v-btn>
+    <v-btn v-else text to="/user/profile">プロファイル</v-btn>
   </v-app-bar>
 </template>
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
+
 export default defineComponent({
   name: 'Headers',
   props: {
