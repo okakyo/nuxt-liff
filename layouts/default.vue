@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <headers :is-login="isLogin" />
     <v-main>
       <v-container>

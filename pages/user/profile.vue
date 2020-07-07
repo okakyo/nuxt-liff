@@ -9,9 +9,11 @@
         <v-card-subtitle>{{ userId }}</v-card-subtitle>
         <v-card-subtitle>{{ statusMessage }}</v-card-subtitle>
       </v-col>
-      <v-btn block color="danger">
-        ログアウト
-      </v-btn>
+      <v-col cols="10">
+        <v-btn block color="danger">
+          ログアウト
+        </v-btn>
+      </v-col>
     </v-row>
   </v-card>
 </template>
