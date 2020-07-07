@@ -1,9 +1,11 @@
 <template>
   <v-card>
     <v-row justify="center">
-      <v-col cols="6" md="4">
+      <v-col cols="4">
         <v-img :src="pictureUrl" />
       </v-col>
+    </v-row>
+    <v-row justify="center">
       <v-col cols="8">
         <v-card-title>{{ displayName }}</v-card-title>
         <v-card-subtitle>{{ userId }}</v-card-subtitle>
